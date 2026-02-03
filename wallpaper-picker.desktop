@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Wallpaper Picker
+Comment=Seleziona e imposta wallpaper
+Exec=quickshell -c wallpaper-picker
+Icon=preferences-desktop-wallpaper
+Terminal=false
+Type=Application
+Categories=Utility;Graphics;Settings;
+Keywords=wallpaper;sfondo;immagine;background;

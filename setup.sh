@@ -17,6 +17,7 @@ REPO_NAME="YuriDot"
 TMP_DIR=$(mktemp -d)
 BACKUP_DIR="$HOME/.config/backup_$(date +%Y%m%d_%H%M%S)"
 CONFIG_DIR="$HOME/.config"
+APPLICATIONS_DIR="$HOME/.local/share/applications"
 
 # Colori
 RED='\033[0;31m'
@@ -104,6 +105,23 @@ done
 
 if [ "$BACKUP_CREATED" = true ]; then
     log_info "Backup salvato in: $BACKUP_DIR"
+fi
+
+# Installa file .desktop
+log_info "Installazione file .desktop..."
+mkdir -p "$APPLICATIONS_DIR"
+
+if [ -f "$TMP_DIR/$REPO_NAME/wallpaper-picker.desktop" ]; then
+    if [ -f "$APPLICATIONS_DIR/wallpaper-picker.desktop" ]; then
+        if [ "$BACKUP_CREATED" = false ]; then
+            mkdir -p "$BACKUP_DIR"
+            BACKUP_CREATED=true
+        fi
+        cp "$APPLICATIONS_DIR/wallpaper-picker.desktop" "$BACKUP_DIR/"
+        log_warn "Backup: wallpaper-picker.desktop -> $BACKUP_DIR/"
+    fi
+    cp "$TMP_DIR/$REPO_NAME/wallpaper-picker.desktop" "$APPLICATIONS_DIR/"
+    log_ok "Installato: wallpaper-picker.desktop"
 fi
 
 # Sostituisci placeholder __HOME__ con il percorso reale
