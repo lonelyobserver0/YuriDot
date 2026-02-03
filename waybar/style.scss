@@ -1,0 +1,109 @@
+@import "__HOME__/.cache/wal/colors.scss";
+
+$radius: 10px;
+$bg-main: rgba($background, 0.85);
+$bg-module: rgba($color0, 0.8);
+
+* {
+  border: none;
+  border-radius: $radius;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+}
+
+window#waybar {
+  background: transparent /* $bg-main */;
+  color: $foreground;
+}
+
+#workspaces button {
+  padding: 0px 8px;
+  margin-top: 2px;
+  margin-left: 3px;
+  color: $color8;
+  background: rgba($color0, 0.60);
+
+  &.active {
+    color: $foreground;
+    background: rgba($color0, 1.0);
+  }
+
+  &.urgent {
+    color: $color1;
+  }
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#custom-notifications,
+#custom-logout,
+#window {
+  padding: 0 10px;
+  margin: 4px 2px;
+  background: $bg-module;
+}
+
+#cpu                      { color: $color4; }
+#memory                   { color: $color6; }
+#temperature              { color: $color3; }
+#network                  { color: $color5; }
+#custom-notifications     { color: $color4; }
+#custom-logout            { color: $color6; }
+#pulseaudio               { color: $color2; }
+#battery                  { color: $color10; }
+
+#battery.warning  { color: $color3; }
+#battery.critical { color: $color1; }
+
+/* Tooltip (hover su moduli, tray, ecc.) */
+tooltip {
+  background: rgba($background, 0.95);
+  color: $foreground;
+  border-radius: $radius;
+  padding: 8px 10px;
+  border: 1px solid rgba($color2, 0.4);
+}
+
+/* Testo interno tooltip */
+tooltip label {
+  color: $foreground;
+}
+
+/* Popup del tray (app in background) */
+#tray menu {
+  background: rgba($background, 0.95);
+  color: $foreground;
+  border-radius: $radius;
+  padding: 6px;
+  border: 1px solid rgba($color2, 0.4);
+}
+
+/* Voci del menu */
+#tray menu menuitem {
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* Hover sui menu item */
+#tray menu menuitem:hover {
+  background: rgba($color2, 0.35);
+  color: $foreground;
+}
+
+/* Separatori nei menu */
+#tray menu separator {
+  background: rgba($color8, 0.4);
+  min-height: 1px;
+  margin: 4px 6px;
+}
+
+/* Sottomenu */
+#tray menu menuitem menu {
+  background: rgba($background, 0.95);
+}

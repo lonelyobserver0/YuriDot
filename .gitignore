@@ -1,0 +1,12 @@
+# File con dati personali/percorsi specifici dell'utente
+gtk-3.0/bookmarks
+fish/fish_variables
+
+# File compilati/generati
+*.css.map
+wofi/style.css
+waybar/style.css
+
+# Backup
+*.bak
+.bak/

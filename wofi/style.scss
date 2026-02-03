@@ -1,0 +1,96 @@
+@import "__HOME__/.cache/wal/colors.scss";
+
+/* ============================= */
+/*          VARIABILI            */
+/* ============================= */
+
+$radius: 12px;
+$bg-main: rgba($background, 0.96);
+$bg-entry: rgba($color0, 0.65);
+$bg-hover: rgba($color2, 0.35);
+$border: rgba($color2, 0.45);
+
+/* ============================= */
+/*          ROOT WINDOW          */
+/* ============================= */
+
+window {
+  background-color: $bg-main;
+  border-radius: $radius;
+  border: 1px solid $border;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+}
+
+/* ============================= */
+/*            INPUT              */
+/* ============================= */
+
+#input {
+  margin: 12px;
+  padding: 10px 14px;
+  border-radius: $radius;
+  background-color: $bg-entry;
+  color: $foreground;
+  border: none;
+}
+
+#input:focus {
+  outline: none;
+}
+
+/* ============================= */
+/*         LIST VIEW             */
+/* ============================= */
+
+#outer-box {
+  padding: 8px;
+}
+
+#scroll {
+  margin: 0 8px 8px 8px;
+}
+
+#inner-box {
+  padding: 6px;
+}
+
+/* ============================= */
+/*          ENTRY                */
+/* ============================= */
+
+#entry {
+  padding: 10px 14px;
+  border-radius: $radius;
+  background-color: transparent;
+  color: $foreground;
+}
+
+#entry:selected {
+  background-color: $bg-hover;
+  color: $foreground;
+}
+
+#entry:hover {
+  background-color: rgba($color2, 0.25);
+}
+
+/* ============================= */
+/*          ICON + TEXT          */
+/* ============================= */
+
+#entry image {
+  margin-right: 12px;
+}
+
+#entry label {
+  color: inherit;
+}
+
+/* ============================= */
+/*          PROMPT               */
+/* ============================= */
+
+#input::placeholder {
+  color: rgba($foreground, 0.6);
+}
