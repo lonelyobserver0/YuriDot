@@ -31,8 +31,6 @@ wget -qO- https://raw.githubusercontent.com/lonelyobserver0/YuriDot/main/setup.s
 
 **Richieste:**
 - `git`
-
-**Opzionali:**
 - `sass` - per compilare i file SCSS
 - `pywal` - per i temi dinamici basati su wallpaper
 
