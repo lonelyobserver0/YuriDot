@@ -1,4 +1,4 @@
-@import "__HOME__/.cache/wal/colors.scss";
+@import "/home/loneobs/.cache/wal/colors.scss";
 
 $radius: 10px;
 $bg-main: rgba($background, 0.85);
@@ -9,10 +9,12 @@ $bg-module: rgba($color0, 0.8);
   border-radius: $radius;
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 13px;
+  padding-bottom: 1px;
 }
 
 window#waybar {
-  background: transparent /* $bg-main */;
+  background: $bg-main;
+  border-radius: 0px;
   color: $foreground;
 }
 
@@ -106,4 +108,31 @@ tooltip label {
 /* Sottomenu */
 #tray menu menuitem menu {
   background: rgba($background, 0.95);
+}
+
+#taskbar {
+    padding: 0 5px;
+}
+
+#taskbar button {
+    padding: 0 8px;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#taskbar button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#taskbar button.active {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 -2px 0 0 #5e81ac;
+}
+
+/* Finestre minimizzate - purtroppo wlr/taskbar non mostra finestre in workspace special */
+#taskbar button.minimized {
+    opacity: 0.4;
 }

@@ -3,16 +3,14 @@
   "position": "top",
   "height": 32,
   "spacing": 6,
-
   "modules-left": [
     "hyprland/workspaces",
+    "wlr/taskbar",
     "hyprland/window"
   ],
-
   "modules-center": [
     "clock"
   ],
-
   "modules-right": [
     "cpu",
     "memory",
@@ -24,55 +22,56 @@
     "battery",
     "custom/logout"
   ],
-
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{id}"
   },
-
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "tooltip-format": "{title} - {app_id}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [],
+    "all-outputs": false,
+    "active-first": true
+  },
   "hyprland/window": {
     "format": "{title}",
     "max-length": 60,
     "separate-outputs": true
   },
-
   "clock": {
     "interval": 60,
     "format": "  {:%H:%M}",
     "tooltip-format": "  {:%A %d %B %Y}"
   },
-
   "cpu": {
     "interval": 2,
     "format": "  {usage}%"
   },
-
   "memory": {
     "interval": 5,
     "format": "  {used:0.1f}G"
   },
-
   "temperature": {
     "interval": 5,
     "critical-threshold": 80,
     "format": "  {temperatureC}°C"
   },
-
   "network": {
     "interval": 3,
     "format-wifi": "  {signalStrength}%",
     "format-ethernet": "󰈀  {ifname}",
     "format-disconnected": "  offline"
   },
-
   "pulseaudio": {
     "format": "  {volume}%",
     "format-muted": "  muted",
     "scroll-step": 5,
     "on-click": "pavucontrol"
   },
-
   "battery": {
     "interval": 30,
     "states": {
@@ -80,25 +79,27 @@
       "critical": 15
     },
     "format": "{icon}  {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
-
   "tray": {
     "icon-size": 16,
     "spacing": 6
   },
-
   "custom/notifications": {
     "exec": "makoctl history | grep -c 'Notification' || echo 0",
     "format": "🕭{}",
     "on-click": "makoctl history | grep 'Notification' | wofi --dmenu -x 1500 -y 5 -W 400 -p 'Notifiche'",
     "interval": 5
   },
-
   "custom/logout": {
     "format": "⏻",
-    "on-click": "departure",
+    "on-click": "wlogout",
     "interval": 5
   }
-
 }
