@@ -41,6 +41,7 @@ FOLDERS=(
     "gtk-4.0"
     "waybar"
     "wofi"
+    "quickshell"
 )
 
 cleanup() {
